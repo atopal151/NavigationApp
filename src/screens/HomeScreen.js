@@ -23,14 +23,14 @@ export default class HomeScreen extends Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.textStyle}> Home Screen </Text>
+                <Text style={styles.textStyle}> Home </Text>
 
                 <TouchableOpacity
                     style={[styles.buttonStyle]}
                     onPress={() => navigation.navigate('DetailsScreen', {
                         title: 'Detail Header 1',
                     })}>
-                    <Text style={styles.textStyle}>Go to Detail Header 1</Text>
+                    <Text style={styles.buttonTextStyle}>Go to Detail Header 1</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
                     onPress={() => navigation.navigate('DetailsScreen', {
                         title: 'Detail Header 2',
                     })}>
-                    <Text style={styles.textStyle}>Go to Detail Header 2</Text>
+                    <Text style={styles.buttonTextStyle}>Go to Detail Header 2</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -46,7 +46,7 @@ export default class HomeScreen extends Component {
                     onPress={() => navigation.navigate('Modal', {
                         title: 'Modal Header 1',
                     })}>
-                    <Text style={styles.textStyle}>Go to Modal</Text>
+                    <Text style={styles.buttonTextStyle}>Go to Modal</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -61,6 +61,11 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         fontSize: 20,
+        margin: 5,
+        fontWeight: 'bold'
+    },
+    buttonTextStyle: {
+        fontSize: 15,
         margin: 5,
         fontWeight: 'bold'
     },
