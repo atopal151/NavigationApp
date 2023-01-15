@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import DetailsScreen from './DetailsScreen';
 
 export default class HomeScreen extends Component {
@@ -13,8 +13,8 @@ export default class HomeScreen extends Component {
 
     static navigationOptions = {
         title: 'Home',
-        headerStyle:{
-            backgroundColor:'yellow'
+        headerStyle: {
+            backgroundColor: 'yellow'
         }
     };
 
@@ -24,21 +24,31 @@ export default class HomeScreen extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.textStyle}> Home Screen </Text>
-                <Button title='Haber 1'
+
+                <TouchableOpacity
+                    style={[styles.buttonStyle]}
                     onPress={() => navigation.navigate('DetailsScreen', {
                         title: 'Detail Header 1',
-                    })} />
+                    })}>
+                    <Text style={styles.textStyle}>Go to Detail Header 1</Text>
+                </TouchableOpacity>
 
-                <Button title='Haber 2'
+                <TouchableOpacity
+                    style={[styles.buttonStyle]}
                     onPress={() => navigation.navigate('DetailsScreen', {
                         title: 'Detail Header 2',
-                    })} />
-                     <Button title='Modal 1'
+                    })}>
+                    <Text style={styles.textStyle}>Go to Detail Header 2</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={[styles.buttonStyle]}
                     onPress={() => navigation.navigate('Modal', {
                         title: 'Modal Header 1',
-                    })} />
- 
-                 </View>
+                    })}>
+                    <Text style={styles.textStyle}>Go to Modal</Text>
+                </TouchableOpacity>
+            </View>
         );
     }
 }
@@ -50,26 +60,35 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textStyle: {
-        fontSize: 25,
-        margin: 50,
+        fontSize: 20,
+        margin: 5,
         fontWeight: 'bold'
+    },
+    buttonStyle: {
+        margin: 20,
+        paddingVertical: 15,
+        backgroundColor: 'white',
+        paddingHorizontal: 10,
+        borderRadius: 3,
+        alignItems: 'center',
+        borderRadius: 10
     }
 });
 
     //* {JSON.stringify(itemId)}  Map yaspısı olarak alınan parametreli bu yapı ile kullanabiliriz.
 
 
-    /**
-     * 
-     * 
-     * 
+/**
+ * 
+ * 
+ * 
 * * Öerneğin
-        user: {
-        id: 'jane',
-        firstName: 'Jane',
-        lastName: 'Done',
-        age: 25,
-  },
+    user: {
+    id: 'jane',
+    firstName: 'Jane',
+    lastName: 'Done',
+    age: 25,
+},
 
 
-     */
+ */
